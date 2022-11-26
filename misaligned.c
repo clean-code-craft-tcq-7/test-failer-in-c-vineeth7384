@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include <string.h> 
 
 typedef struct{
     int colorCode;
@@ -28,7 +29,7 @@ int printColorMap() {
 
 
 int main() {
-       colorPair colorPair;
+    colorPair colorPair;
     int result = printColorMap();
     assert(result == 25);
     printf("All is well (maybe!)\n");
