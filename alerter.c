@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
+#include"UnitTest_config.h"
 
 #define UNIT_TEST TRUE
 
