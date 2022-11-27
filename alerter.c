@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
 
-#define UNITTEST TRUE
+#define UNIT_TEST TRUE
 
 int alertFailureCount = 0;
 
