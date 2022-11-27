@@ -2,8 +2,6 @@
 #include <assert.h>
 #include"UnitTest_config.h"
 
-#define UNIT_TEST TRUE
-
 int alertFailureCount = 0;
 int NetworAlertStatus_Test =0;
 
@@ -38,7 +36,6 @@ int main() {
     NetworAlertStatus_Test = 500;
     alertInCelcius(400.5);
     assert(alertFailureCount == 1);
-    printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
 }
