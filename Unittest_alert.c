@@ -17,7 +17,6 @@ int networkAlertStub(float celcius) {
     return TestNetworAlertStatus;
 }
 
-
 void testAlerter(float farenheit, int return_code)
 {
     int alert_failure_count = alertFailureCount;
