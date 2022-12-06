@@ -38,11 +38,4 @@ void testAlerter(float farenheit, int return_code)
     }
 }
 
-// Tester function which tests the 
-void testTemperatureConverter(float farenheit, float expected_celcius)
-{
-    // Setup for the test environment
-    float celcius = convertFaranheitToCelcius(farenheit);
-    float epsilon = 0.01;
-    assert(fabs(celcius - expected_celcius) < epsilon);
-}
+
