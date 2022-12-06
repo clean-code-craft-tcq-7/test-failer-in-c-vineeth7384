@@ -8,7 +8,7 @@ extern int alertFailureCount;
 
 int TestNetworAlertStatus = 0;
 
-// Stub function will return the networkAlert status based on the simulated value in test cases
+// Stub function 
 int networkAlertStub(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     // Return 200 for ok
@@ -17,10 +17,9 @@ int networkAlertStub(float celcius) {
     return TestNetworAlertStatus;
 }
 
-// Tester function which tests the 
+
 void testAlerter(float farenheit, int return_code)
 {
-    // Setup for the test environment
     int alert_failure_count = alertFailureCount;
     TestNetworAlertStatus = return_code;
 
