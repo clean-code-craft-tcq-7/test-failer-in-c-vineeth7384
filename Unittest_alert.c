@@ -3,6 +3,7 @@
 #include <assert.h>
 #include <math.h>
 #include "alert.h"
+#include "Unittest_alert.h"
 
 extern int alertFailureCount;
 
