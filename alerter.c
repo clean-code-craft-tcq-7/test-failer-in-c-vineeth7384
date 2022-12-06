@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
-#include "alerter.h"
-#include "alerter_test.h"
+#include "alert.h"
+#include "Unittest_alert.h"
 
 int alertFailureCount = 0;
 
