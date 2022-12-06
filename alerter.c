@@ -24,12 +24,9 @@ void alertInCelcius(float farenheit, int (*networkAlert_fptr)(float))
 }
 
 int main() {
-    alertInCelcius(400.5);
-    alertInCelcius(303.6);
-    printf("%d alerts failed.\n", alertFailureCount);
-    NetworAlertStatus_Test = 500;
-    alertInCelcius(400.5);
-    assert(alertFailureCount == 1);
+     testAlerter(97.6, 200);
+    testAlerter(33.2, 410);
+    testAlerter(11.54, 500);
     printf("All is well (maybe!)\n");
     return 0;
 }
