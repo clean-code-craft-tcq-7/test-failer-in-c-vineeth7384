@@ -51,6 +51,7 @@ int main() {
     assert(strcmp(colorPairs[20].minorColor, "Blue") == 0);
     assert(strcmp(colorPairs[24].majorColor, "Violet") == 0);
     assert(strcmp(colorPairs[24].minorColor, "Slate") == 0);
+    assert(getColorMapList() == 25);
 
     printf("All is well (maybe!)\n");
     return 0;
