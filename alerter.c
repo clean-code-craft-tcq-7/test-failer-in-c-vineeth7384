@@ -1,19 +1,39 @@
 #include <stdio.h>
 #include <assert.h>
-#include "alert.h"
-#include "Unittest_alert.h"
+
+typedef int (*networkAlert_fnptr)(float);
 
 int alertFailureCount = 0;
 
-float ConvertFaranheitToCelcius(float farenheit)
+int networkAlertStub(float celcius)
 {
-    return (farenheit - 32) * 5 / 9;
+    printf("ALERT: Temperature is %.1f celcius.\n", celcius);
+    // Return 200 for ok
+    // Return 500 for not-ok
+    // stub always succeeds and returns 200
+    return 200;
 }
 
-void alertInCelcius(float farenheit, int (*networkAlert_fptr)(float)) 
+int networkAlertReal(float celcius)
 {
-    float celcius = ConvertFaranheitToCelcius(farenheit);
-    int returnCode = networkAlert_fptr(celcius);
+    printf("ALERT: Temperature is %.1f celcius.\n", celcius);
+    // Return 200 for ok
+    // Return 500 for not-ok
+    // Assumption If celcius is less than 200 for ok else not-ok 
+    if (celcius < 200.0)
+    {
+        return 200;
+    }
+    else
+    {
+        return 500;
+    }
+
+}
+
+void alertInCelcius(networkAlert_fnptr networkAlert_fn, float farenheit) {
+    float celcius = (farenheit - 32) * 5 / 9;
+    int returnCode = networkAlert_fn(celcius);
     if (returnCode != 200) {
         // non-ok response is not an error! Issues happen in life!
         // let us keep a count of failures to report
@@ -24,9 +44,13 @@ void alertInCelcius(float farenheit, int (*networkAlert_fptr)(float))
 }
 
 int main() {
-     testAlerter(97.6, 200);
-    testAlerter(33.2, 410);
-    testAlerter(11.54, 500);
+   
+
+    alertInCelcius(networkAlertStub, 500.5);
+    alertInCelcius(networkAlertStub, 200.6);
+    alertInCelcius(networkAlertStub, 1000);
     printf("All is well (maybe!)\n");
     return 0;
 }
+Footer
+© 2022 GitHub, Inc.
