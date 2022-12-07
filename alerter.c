@@ -46,11 +46,15 @@ void alertInCelcius(networkAlert_fnptr networkAlert_fn, float farenheit) {
 int main() {
    
 
-    alertInCelcius(networkAlertStub, 500.5);
     assert(alertFailureCount == 0);
-    alertInCelcius(networkAlertStub, 200.6);
+    alertInCelcius(networkAlertStub, 0.0);
     assert(alertFailureCount == 0);
-    alertInCelcius(networkAlertStub, 1000);
+    alertInCelcius(networkAlertStub, 400.5);
+    assert(alertFailureCount == 0);
+    alertInCelcius(networkAlertStub, 600.6);
+    assert(alertFailureCount == 0);
+    alertInCelcius(networkAlertStub, 1000.0);
+    assert(alertFailureCount == 0);
     printf("All is well (maybe!)\n");
     return 0;
 }
