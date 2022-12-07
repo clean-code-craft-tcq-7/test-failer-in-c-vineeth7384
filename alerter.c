@@ -47,7 +47,9 @@ int main() {
    
 
     alertInCelcius(networkAlertStub, 500.5);
+    assert(alertFailureCount == 0);
     alertInCelcius(networkAlertStub, 200.6);
+    assert(alertFailureCount == 0);
     alertInCelcius(networkAlertStub, 1000);
     printf("All is well (maybe!)\n");
     return 0;
