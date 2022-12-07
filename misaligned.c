@@ -3,7 +3,7 @@
 #include <string.h>
 
 #define MAX_COLOR_PAIR 25
-#define MAX_COLOR_LEN 15
+#define MAX_COLOR_LEN 10
 
 typedef struct {
     char majorColor[MAX_COLOR_LEN];
@@ -20,7 +20,7 @@ int getColorMapList() {
     for(i = 0; i < 5; i++) {
         for(j = 0; j < 5; j++) {
             strcpy(colorPairs[(i*5)+j].majorColor, majorColor[i]);
-            strcpy(colorPairs[(i*5)+j].minorColor, minorColor[j]);
+            strcpy(colorPairs[(i*5)+j].minorColor, minorColor[i]);
         }
     }
     return i * j;
