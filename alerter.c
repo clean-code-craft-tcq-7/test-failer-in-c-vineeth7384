@@ -52,5 +52,3 @@ int main() {
     printf("All is well (maybe!)\n");
     return 0;
 }
-Footer
-© 2022 GitHub, Inc.
