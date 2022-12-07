@@ -1,2 +1,2 @@
 
-void extern testAlerter(float farenheit, int return_code);
+ extern void testAlerter(float farenheit, int return_code);
