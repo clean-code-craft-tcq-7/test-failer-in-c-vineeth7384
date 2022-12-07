@@ -39,16 +39,13 @@ void alertInCelcius(networkAlert_fnptr networkAlert_fn, float farenheit) {
 }
 
 int main() {
-    //Assertion for the Stub Code Failure count does not increment
     assert(alertFailureCount == 0);
-    alertInCelcius(networkAlertStub, 0.0);
-    assert(alertFailureCount == 0);
-    alertInCelcius(networkAlertStub, 400.5);
+    alertInCelcius(networkAlertStub, 500.5);
     assert(alertFailureCount == 1);
     alertInCelcius(networkAlertStub, 600.6);
-    assert(alertFailureCount == 0);
-    alertInCelcius(networkAlertStub, 1000.0);
-    assert(alertFailureCount == 0);
+    assert(alertFailureCount == 2);
+    alertInCelcius(networkAlertStub, 1000.1);
+    assert(alertFailureCount == 1);
 
     printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
