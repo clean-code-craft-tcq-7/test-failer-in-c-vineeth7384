@@ -5,8 +5,7 @@ typedef int (*networkAlert_fnptr)(float);
 
 int alertFailureCount = 0;
 
-int networkAlertStub(float celcius)
-{
+int networkAlertStub(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     // Return 200 for ok
     // Return 500 for not-ok
@@ -14,18 +13,14 @@ int networkAlertStub(float celcius)
     return 200;
 }
 
-int networkAlertReal(float celcius)
-{
+int networkAlertReal(float celcius) {
     printf("ALERT: Temperature is %.1f celcius.\n", celcius);
     // Return 200 for ok
     // Return 500 for not-ok
     // Assumption If celcius is less than 200 for ok else not-ok 
-    if (celcius < 200.0)
-    {
+    if (celcius < 200.0) {
         return 200;
-    }
-    else
-    {
+    }else {
         return 500;
     }
 
@@ -44,8 +39,7 @@ void alertInCelcius(networkAlert_fnptr networkAlert_fn, float farenheit) {
 }
 
 int main() {
-   
-
+    //Assertion for the Stub Code Failure count does not increment
     assert(alertFailureCount == 0);
     alertInCelcius(networkAlertStub, 0.0);
     assert(alertFailureCount == 0);
@@ -55,6 +49,8 @@ int main() {
     assert(alertFailureCount == 0);
     alertInCelcius(networkAlertStub, 1000.0);
     assert(alertFailureCount == 0);
+
+    printf("%d alerts failed.\n", alertFailureCount);
     printf("All is well (maybe!)\n");
     return 0;
 }
