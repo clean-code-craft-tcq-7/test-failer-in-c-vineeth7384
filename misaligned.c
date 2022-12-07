@@ -3,7 +3,6 @@
 #include <string.h>
 
 #define MAX_COLOR_PAIR 25
-#define MAX_COLOR_LEN 10
 
 typedef struct {
     char majorColor[MAX_COLOR_LEN];
